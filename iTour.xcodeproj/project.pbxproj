@@ -12,6 +12,7 @@
 		0A0D095B2AD4589800073210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D095A2AD4589800073210 /* Assets.xcassets */; };
 		0A0D095F2AD4589800073210 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D095E2AD4589800073210 /* Preview Assets.xcassets */; };
 		0A0D09662AD4598700073210 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D09652AD4598700073210 /* Destination.swift */; };
+		0A0D096A2AD45E3000073210 /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D09692AD45E3000073210 /* EditDestinationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0A0D095C2AD4589800073210 /* iTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iTour.entitlements; sourceTree = "<group>"; };
 		0A0D095E2AD4589800073210 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A0D09652AD4598700073210 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		0A0D09692AD45E3000073210 /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				0A0D09562AD4589700073210 /* iTourApp.swift */,
 				0A0D09582AD4589700073210 /* ContentView.swift */,
+				0A0D09692AD45E3000073210 /* EditDestinationView.swift */,
 				0A0D095A2AD4589800073210 /* Assets.xcassets */,
 				0A0D095C2AD4589800073210 /* iTour.entitlements */,
 				0A0D095D2AD4589800073210 /* Preview Content */,
@@ -145,6 +148,7 @@
 				0A0D09592AD4589700073210 /* ContentView.swift in Sources */,
 				0A0D09572AD4589700073210 /* iTourApp.swift in Sources */,
 				0A0D09662AD4598700073210 /* Destination.swift in Sources */,
+				0A0D096A2AD45E3000073210 /* EditDestinationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
