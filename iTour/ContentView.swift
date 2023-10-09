@@ -17,15 +17,18 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(destinations) { destination in
-                    VStack(alignment: .leading) {
-                        Text(destination.name)
-                            .font(.headline)
-                        Text(destination.date.formatted(date: .long, time: .shortened))
+                    NavigationLink(value: destination) {
+                        VStack(alignment: .leading) {
+                            Text(destination.name)
+                                .font(.headline)
+                            Text(destination.date.formatted(date: .long, time: .shortened))
+                        }
                     }
                 }
                 .onDelete(perform: deleteDestinations)
             }
             .navigationTitle("iTour")
+            .navigationDestination(for: Destination.self, destination: EditDestinationView.init)
             .toolbar {
                 Button("Add Samples", action: addSamples)
             }
