@@ -13,9 +13,12 @@ struct DestinationListingView: View {
     
     @Query var destinations: [Destination]
     
-    init(sort: [SortDescriptor<Destination>], searchString: String) {
+    init(sort: [SortDescriptor<Destination>], searchString: String, hidePastDestinations: Bool = false) {
+        let now = Date.now
         _destinations = Query(filter: #Predicate {
-            if searchString.isEmpty {
+            if hidePastDestinations && $0.date < now {
+                return false
+            } else if searchString.isEmpty {
                 return true
             } else {
                 return $0.name.localizedStandardContains(searchString)
