@@ -8,16 +8,18 @@
 import SwiftUI
 import SwiftData
 
+let DEFAULT_SORT_ORDER = SortDescriptor(\Destination.name)
+
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
         
     @State private var path = [Destination]()
     @State private var searchText = ""
-    @State private var sortOrder = SortDescriptor(\Destination.name)
+    @State private var sortOrder = DEFAULT_SORT_ORDER
     
     var body: some View {
         NavigationStack(path: $path) {
-            DestinationListingView(sort: sortOrder, searchString: searchText)
+            DestinationListingView(sort: [sortOrder, DEFAULT_SORT_ORDER], searchString: searchText)
                 .navigationDestination(for: Destination.self, destination: EditDestinationView.init)
                 .navigationTitle("iTour")
                 .searchable(text: $searchText)
