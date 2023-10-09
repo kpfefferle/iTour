@@ -29,13 +29,16 @@ struct EditDestinationView: View {
             }
             
             Section("Sights") {
-                ForEach(destination.sights) { sight in
-                    Text(sight.name)
-                }
-                
-                HStack {
-                    TextField("Add a new sight in \(destination.name)", text: $newSightName)
-                    Button("Add", action: addSight)
+                List {
+                    ForEach(destination.sights) { sight in
+                        Text(sight.name)
+                    }
+                    .onDelete(perform: deleteSights)
+                    
+                    HStack {
+                        TextField("Add a new sight in \(destination.name)", text: $newSightName)
+                        Button("Add", action: addSight)
+                    }
                 }
             }
         }
@@ -50,6 +53,12 @@ struct EditDestinationView: View {
             let sight = Sight(name: newSightName)
             destination.sights.append(sight)
             newSightName = ""
+        }
+    }
+    
+    func deleteSights(_ indexSet: IndexSet) {
+        for index in indexSet {
+            destination.sights.remove(at: index)
         }
     }
 }
